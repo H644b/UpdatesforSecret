@@ -11,25 +11,92 @@
 
     <style>
         /* --- CSS Variables (Themes) --- */
-        /* ... (Theme variables remain the same as before) ... */
-        :root { /* Light Theme Defaults */ --bg-color: #f0f2f5; --text-color: #24292e; --secondary-text-color: #586069; --muted-text-color: #6a737d; --input-bg: #ffffff; --input-border: #d1d5da; --placeholder-color: #aaa; --primary-btn-bg: #007bff; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #0056b3; --primary-btn-active-bg: #004085; --secondary-btn-bg: rgba(40, 40, 40, 0.8); --secondary-btn-text: #ffffff; --secondary-btn-hover-bg: rgba(0, 0, 0, 1); --shadow-color: rgba(0, 0, 0, 0.1); --iframe-bg: #ffffff; --selector-bg: #ffffff; --selector-border: #d1d5da; --selector-text: #24292e; --link-color: #0366d6; --overlay-bg: rgba(0, 0, 0, 0.6); --panel-bg: #ffffff; --panel-shadow: rgba(0, 0, 0, 0.2); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(0, 0, 0, 0.05); --icon-button-text: #586069; --success-color: #28a745; --warning-color: #ffc107; --error-color: #dc3545; }
-        html[data-theme="dark"] { /* Dark Theme Overrides */ --bg-color: #1e1e1e; --text-color: #d4d4d4; --secondary-text-color: #cccccc; --muted-text-color: #8b949e; --input-bg: #3c3c3c; --input-border: #555555; --placeholder-color: #888888; --primary-btn-bg: #0e639c; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #1177bb; --primary-btn-active-bg: #158bcd; --secondary-btn-bg: rgba(200, 200, 200, 0.7); --secondary-btn-text: #1e1e1e; --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9); --shadow-color: rgba(255, 255, 255, 0.05); --iframe-bg: #252526; --selector-bg: #3c3c3c; --selector-border: #555555; --selector-text: #d4d4d4; --link-color: #4e94ce; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #2d2d2d; --panel-shadow: rgba(0, 0, 0, 0.5); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #cccccc; --success-color: #34c759; --warning-color: #ffcc00; --error-color: #ff3b30; }
-        /* ... (Other theme definitions) ... */
-        html[data-theme="vscode-dark-plus"] { --bg-color: #1e1e1e; --text-color: #d4d4d4; --secondary-text-color: #a0a0a0; --muted-text-color: #8b949e; --input-bg: #3c3c3c; --input-border: #3c3c3c; --placeholder-color: #7f7f7f; --primary-btn-bg: #0e639c; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #1177bb; --primary-btn-active-bg: #158bcd; --secondary-btn-bg: rgba(180, 180, 180, 0.7); --secondary-btn-text: #1e1e1e; --secondary-btn-hover-bg: rgba(210, 210, 210, 0.9); --shadow-color: rgba(0, 0, 0, 0.3); --iframe-bg: #1e1e1e; --selector-bg: #3c3c3c; --selector-border: #3c3c3c; --selector-text: #d4d4d4; --link-color: #4e94ce; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #252526; --panel-shadow: rgba(0, 0, 0, 0.5); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #a0a0a0; --success-color: #34c759; --warning-color: #ffcc00; --error-color: #ff3b30;}
-        html[data-theme="monokai"] { --bg-color: #272822; --text-color: #f8f8f2; --secondary-text-color: #a9a9a9; --muted-text-color: #75715e; --input-bg: #3e3d32; --input-border: #5b5a4e; --placeholder-color: #9e9e9e; --primary-btn-bg: #ae81ff; --primary-btn-text: #272822; --primary-btn-hover-bg: #be95ff; --primary-btn-active-bg: #cfadff; --secondary-btn-bg: rgba(200, 200, 200, 0.7); --secondary-btn-text: #272822; --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9); --shadow-color: rgba(0, 0, 0, 0.3); --iframe-bg: #272822; --selector-bg: #3e3d32; --selector-border: #5b5a4e; --selector-text: #f8f8f2; --link-color: #66d9ef; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #272822; --panel-shadow: rgba(0, 0, 0, 0.5); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #a9a9a9; --success-color: #a6e22e; --warning-color: #e6db74; --error-color: #f92672; }
-        html[data-theme="solarized-light"] { --bg-color: #fdf6e3; --text-color: #657b83; --secondary-text-color: #93a1a1; --muted-text-color: #93a1a1; --input-bg: #eee8d5; --input-border: #93a1a1; --placeholder-color: #93a1a1; --primary-btn-bg: #268bd2; --primary-btn-text: #fdf6e3; --primary-btn-hover-bg: #1a6a9e; --primary-btn-active-bg: #0f4c75; --secondary-btn-bg: rgba(88, 110, 117, 0.8); --secondary-btn-text: #fdf6e3; --secondary-btn-hover-bg: rgba(40, 50, 55, 1); --shadow-color: rgba(0, 0, 0, 0.08); --iframe-bg: #fdf6e3; --selector-bg: #eee8d5; --selector-border: #93a1a1; --selector-text: #657b83; --link-color: #2aa198; --overlay-bg: rgba(0, 0, 0, 0.5); --panel-bg: #fdf6e3; --panel-shadow: rgba(0, 0, 0, 0.2); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(0, 0, 0, 0.05); --icon-button-text: #657b83; --success-color: #859900; --warning-color: #b58900; --error-color: #dc322f; }
-        html[data-theme="solarized-dark"] { --bg-color: #002b36; --text-color: #839496; --secondary-text-color: #586e75; --muted-text-color: #586e75; --input-bg: #073642; --input-border: #586e75; --placeholder-color: #586e75; --primary-btn-bg: #268bd2; --primary-btn-text: #fdf6e3; --primary-btn-hover-bg: #1f7bbd; --primary-btn-active-bg: #1a6a9e; --secondary-btn-bg: rgba(147, 161, 161, 0.7); --secondary-btn-text: #002b36; --secondary-btn-hover-bg: rgba(180, 190, 190, 0.9); --shadow-color: rgba(255, 255, 255, 0.05); --iframe-bg: #002b36; --selector-bg: #073642; --selector-border: #586e75; --selector-text: #839496; --link-color: #2aa198; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #073642; --panel-shadow: rgba(0, 0, 0, 0.4); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #839496; --success-color: #859900; --warning-color: #b58900; --error-color: #dc322f; }
+        :root {
+            /* Default: Light Theme */
+            --bg-color: #f0f2f5;
+            --text-color: #24292e;
+            --secondary-text-color: #586069;
+            --muted-text-color: #6a737d;
+            --input-bg: #ffffff;
+            --input-border: #d1d5da;
+            --placeholder-color: #aaa;
+            --primary-btn-bg: #007bff;
+            --primary-btn-text: #ffffff;
+            --primary-btn-hover-bg: #0056b3;
+            --primary-btn-active-bg: #004085;
+            --secondary-btn-bg: rgba(40, 40, 40, 0.8);
+            --secondary-btn-text: #ffffff;
+            --secondary-btn-hover-bg: rgba(0, 0, 0, 1);
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --iframe-bg: #ffffff;
+            --selector-bg: #ffffff;
+            --selector-border: #d1d5da;
+            --selector-text: #24292e;
+            --link-color: #0366d6;
+            --overlay-bg: rgba(0, 0, 0, 0.6);
+            --panel-bg: #ffffff;
+            --panel-shadow: rgba(0, 0, 0, 0.2);
+            --icon-button-bg: transparent;
+            --icon-button-hover-bg: rgba(0, 0, 0, 0.05);
+            --icon-button-text: #586069;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --error-color: #dc3545;
+        }
+
+        html[data-theme="dark"] {
+            --bg-color: #1e1e1e;
+            --text-color: #d4d4d4;
+            --secondary-text-color: #cccccc;
+            --muted-text-color: #8b949e;
+            --input-bg: #3c3c3c;
+            --input-border: #555555;
+            --placeholder-color: #888888;
+            --primary-btn-bg: #0e639c;
+            --primary-btn-text: #ffffff;
+            --primary-btn-hover-bg: #1177bb;
+            --primary-btn-active-bg: #158bcd;
+            --secondary-btn-bg: rgba(200, 200, 200, 0.7);
+            --secondary-btn-text: #1e1e1e;
+            --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9);
+            --shadow-color: rgba(255, 255, 255, 0.05);
+            --iframe-bg: #252526;
+            --selector-bg: #3c3c3c;
+            --selector-border: #555555;
+            --selector-text: #d4d4d4;
+            --link-color: #4e94ce;
+            --overlay-bg: rgba(0, 0, 0, 0.7);
+            --panel-bg: #2d2d2d;
+            --panel-shadow: rgba(0, 0, 0, 0.5);
+            --icon-button-bg: transparent;
+            --icon-button-hover-bg: rgba(255, 255, 255, 0.1);
+             --icon-button-text: #cccccc;
+            --success-color: #34c759;
+            --warning-color: #ffcc00;
+            --error-color: #ff3b30;
+        }
+
+        html[data-theme="vscode-dark-plus"] {
+            --bg-color: #1e1e1e; --text-color: #d4d4d4; --secondary-text-color: #a0a0a0; --muted-text-color: #8b949e; --input-bg: #3c3c3c; --input-border: #3c3c3c; --placeholder-color: #7f7f7f; --primary-btn-bg: #0e639c; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #1177bb; --primary-btn-active-bg: #158bcd; --secondary-btn-bg: rgba(180, 180, 180, 0.7); --secondary-btn-text: #1e1e1e; --secondary-btn-hover-bg: rgba(210, 210, 210, 0.9); --shadow-color: rgba(0, 0, 0, 0.3); --iframe-bg: #1e1e1e; --selector-bg: #3c3c3c; --selector-border: #3c3c3c; --selector-text: #d4d4d4; --link-color: #4e94ce; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #252526; --panel-shadow: rgba(0, 0, 0, 0.5); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #a0a0a0; --success-color: #34c759; --warning-color: #ffcc00; --error-color: #ff3b30;
+        }
+        html[data-theme="monokai"] {
+             --bg-color: #272822; --text-color: #f8f8f2; --secondary-text-color: #a9a9a9; --muted-text-color: #75715e; --input-bg: #3e3d32; --input-border: #5b5a4e; --placeholder-color: #9e9e9e; --primary-btn-bg: #ae81ff; --primary-btn-text: #272822; --primary-btn-hover-bg: #be95ff; --primary-btn-active-bg: #cfadff; --secondary-btn-bg: rgba(200, 200, 200, 0.7); --secondary-btn-text: #272822; --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9); --shadow-color: rgba(0, 0, 0, 0.3); --iframe-bg: #272822; --selector-bg: #3e3d32; --selector-border: #5b5a4e; --selector-text: #f8f8f2; --link-color: #66d9ef; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #272822; --panel-shadow: rgba(0, 0, 0, 0.5); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #a9a9a9; --success-color: #a6e22e; --warning-color: #e6db74; --error-color: #f92672;
+        }
+        html[data-theme="solarized-light"] {
+            --bg-color: #fdf6e3; --text-color: #657b83; --secondary-text-color: #93a1a1; --muted-text-color: #93a1a1; --input-bg: #eee8d5; --input-border: #93a1a1; --placeholder-color: #93a1a1; --primary-btn-bg: #268bd2; --primary-btn-text: #fdf6e3; --primary-btn-hover-bg: #1a6a9e; --primary-btn-active-bg: #0f4c75; --secondary-btn-bg: rgba(88, 110, 117, 0.8); --secondary-btn-text: #fdf6e3; --secondary-btn-hover-bg: rgba(40, 50, 55, 1); --shadow-color: rgba(0, 0, 0, 0.08); --iframe-bg: #fdf6e3; --selector-bg: #eee8d5; --selector-border: #93a1a1; --selector-text: #657b83; --link-color: #2aa198; --overlay-bg: rgba(0, 0, 0, 0.5); --panel-bg: #fdf6e3; --panel-shadow: rgba(0, 0, 0, 0.2); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(0, 0, 0, 0.05); --icon-button-text: #657b83; --success-color: #859900; --warning-color: #b58900; --error-color: #dc322f;
+        }
+        html[data-theme="solarized-dark"] {
+            --bg-color: #002b36; --text-color: #839496; --secondary-text-color: #586e75; --muted-text-color: #586e75; --input-bg: #073642; --input-border: #586e75; --placeholder-color: #586e75; --primary-btn-bg: #268bd2; --primary-btn-text: #fdf6e3; --primary-btn-hover-bg: #1f7bbd; --primary-btn-active-bg: #1a6a9e; --secondary-btn-bg: rgba(147, 161, 161, 0.7); --secondary-btn-text: #002b36; --secondary-btn-hover-bg: rgba(180, 190, 190, 0.9); --shadow-color: rgba(255, 255, 255, 0.05); --iframe-bg: #002b36; --selector-bg: #073642; --selector-border: #586e75; --selector-text: #839496; --link-color: #2aa198; --overlay-bg: rgba(0, 0, 0, 0.7); --panel-bg: #073642; --panel-shadow: rgba(0, 0, 0, 0.4); --icon-button-bg: transparent; --icon-button-hover-bg: rgba(255, 255, 255, 0.1); --icon-button-text: #839496; --success-color: #859900; --warning-color: #b58900; --error-color: #dc322f;
+        }
+
 
         /* --- Base Styles --- */
-        /* ... (Reset, body, link styles remain the same) ... */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { height: 100%; overflow: hidden; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; position: relative; min-height: 100%; }
         a { color: var(--link-color); }
 
-
         /* --- Search Area & Controls --- */
-        /* ... (Styles for search, theme, settings button remain mostly the same) ... */
         #search-container { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 20px; transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; opacity: 1; visibility: visible; text-align: center; }
         #greeting { font-size: 1.4em; font-weight: 500; margin-bottom: 25px; color: var(--text-color); max-width: 600px; width: 100%; }
         #search-box { display: flex; width: 100%; max-width: 600px; background-color: var(--input-bg); border: 1px solid var(--input-border); border-radius: 25px; box-shadow: 0 5px 15px var(--shadow-color); overflow: hidden; margin-bottom: 15px; transition: background-color 0.3s ease, border-color 0.3s ease; }
@@ -47,36 +114,16 @@
         #settings-button:hover { background-color: var(--icon-button-hover-bg); }
 
         /* --- Update Controls --- */
-        #update-controls {
-            margin-top: 15px; /* Space above update button */
-            text-align: center;
-        }
-        #enable-update-button {
-            padding: 8px 15px;
-            font-size: 0.9em;
-            color: var(--primary-btn-text);
-            background-color: var(--primary-btn-bg);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, opacity 0.3s ease;
-        }
-         #enable-update-button:hover { background-color: var(--primary-btn-hover-bg); }
-         #enable-update-button.hidden { display: none; } /* Hide when not needed */
-
-        #update-status {
-            font-size: 0.8em;
-            margin-top: 8px;
-            color: var(--secondary-text-color);
-            min-height: 1.2em; /* Prevent layout shift */
-        }
-         #update-status.success { color: var(--success-color); }
-         #update-status.warning { color: var(--warning-color); }
-         #update-status.error { color: var(--error-color); }
-
+        #update-controls { margin-top: 15px; text-align: center; }
+        #enable-update-button { padding: 8px 15px; font-size: 0.9em; color: var(--primary-btn-text); background-color: var(--primary-btn-bg); border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.2s ease, opacity 0.3s ease; }
+        #enable-update-button:hover { background-color: var(--primary-btn-hover-bg); }
+        #enable-update-button.hidden { display: none; }
+        #update-status { font-size: 0.8em; margin-top: 8px; color: var(--secondary-text-color); min-height: 1.2em; }
+        #update-status.success { color: var(--success-color); }
+        #update-status.warning { color: var(--warning-color); }
+        #update-status.error { color: var(--error-color); }
 
         /* --- Settings Overlay & Panel --- */
-        /* ... (Styles remain the same) ... */
         #settings-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--overlay-bg); display: flex; justify-content: center; align-items: center; z-index: 1100; visibility: hidden; opacity: 0; transition: opacity 0.3s ease, visibility 0s linear 0.3s; }
         #settings-overlay.visible { visibility: visible; opacity: 1; transition: opacity 0.3s ease; }
         #settings-panel { background-color: var(--panel-bg); padding: 25px 30px; border-radius: 8px; box-shadow: 0 5px 20px var(--panel-shadow); width: 90%; max-width: 450px; position: relative; color: var(--text-color); }
@@ -92,7 +139,6 @@
         #close-settings-button:hover { color: var(--text-color); }
 
         /* --- Iframe & Controls --- */
-        /* ... (Styles remain the same) ... */
         #iframe-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; visibility: hidden; opacity: 0; transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s; z-index: 1000; background-color: var(--iframe-bg); }
         #iframe-container.visible { visibility: visible; opacity: 1; transition: opacity 0.4s ease-in-out; }
         #content-iframe { width: 100%; height: 100%; border: none; background-color: var(--iframe-bg); }
@@ -101,14 +147,11 @@
         #close-button:hover { background-color: var(--secondary-btn-hover-bg); }
         #close-button:active { transform: scale(0.95); }
 
-
         /* --- Disclaimer --- */
-        /* ... (Styles remain the same) ... */
-         #disclaimer { position: fixed; bottom: 10px; left: 0; width: 100%; text-align: center; font-size: 0.75em; color: var(--muted-text-color); padding: 0 15px; z-index: 5; visibility: visible; opacity: 1; transition: opacity 0.5s ease, visibility 0s linear 0.5s; }
-         #disclaimer.hidden { opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0s linear 0.5s; }
+        #disclaimer { position: fixed; bottom: 10px; left: 0; width: 100%; text-align: center; font-size: 0.75em; color: var(--muted-text-color); padding: 0 15px; z-index: 5; visibility: visible; opacity: 1; transition: opacity 0.5s ease, visibility 0s linear 0.5s; }
+        #disclaimer.hidden { opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0s linear 0.5s; }
 
         /* --- Panic Mode Styles --- */
-        /* ... (Styles remain the same, ensure #update-controls are hidden too) ... */
         body.panic-active #search-container,
         body.panic-active #update-controls { /* Hide update controls too */
             opacity: 0; visibility: hidden; pointer-events: none;
@@ -119,6 +162,14 @@
         body.panic-active #disclaimer { display: none !important; }
         body.panic-active #settings-overlay { display: none !important; }
 
+         /* Shake Animation */
+         @keyframes shake {
+             0%, 100% { transform: translateX(0); }
+             25% { transform: translateX(-5px); }
+             75% { transform: translateX(5px); }
+         }
+         #shake-animation-style { display: none; } /* Used only via JS */
+
     </style>
 </head>
 <body>
@@ -127,13 +178,15 @@
     <div id="search-container">
         <h1 id="greeting">Hello, what website do you want to unblock?</h1>
         <div id="search-box">
-            <input type="text" id="url-input" placeholder="Enter URL (e.g., https://wikipedia.org)">
+            <input type="text" id="url-input" placeholder="AHAHHA Enter URL (e.g., https://wikipedia.org)">
             <button id="submit-search-button">Search</button>
         </div>
         <div id="controls-container">
              <div id="theme-controls">
                  <label id="theme-selector-label" for="theme-selector">Theme:</label>
-                 <select id="theme-selector"><!-- options --></select>
+                 <select id="theme-selector">
+                    <!-- Options added by JS -->
+                </select>
             </div>
             <button id="settings-button" title="Settings">⚙️</button>
         </div>
@@ -149,10 +202,28 @@
         <iframe id="content-iframe" src="about:blank" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <p id="disclaimer"><!-- text --></p>
+    <p id="disclaimer">
+        <!-- Text added by JS -->
+    </p>
 
     <!-- Settings Overlay -->
-    <div id="settings-overlay"><!-- panel, inputs, buttons --></div>
+    <div id="settings-overlay">
+        <div id="settings-panel">
+            <button id="close-settings-button" title="Close Settings">×</button>
+            <h2>Settings</h2>
+            <div class="settings-field">
+                <label for="title-input">Page Title:</label>
+                <input type="text" id="title-input">
+            </div>
+            <div class="settings-field">
+                <label for="favicon-input">Favicon URL:</label>
+                <input type="url" id="favicon-input" placeholder="https://example.com/favicon.ico">
+            </div>
+            <div id="settings-buttons">
+                <button id="save-settings-button">Save Settings</button>
+            </div>
+        </div>
+    </div>
 
      <!-- DOC_CONTENT_END -->
 
@@ -174,7 +245,7 @@
         let searchContainer, greeting, searchBox, urlInput, submitSearchButton, iframeContainer, contentIframe, closeButton, bodyElement, themeSelector, disclaimerElement,
             settingsButton, settingsOverlay, settingsPanel, closeSettingsButton, titleInput, faviconInput, saveSettingsButton,
             pageTitleElement, faviconLinkElement,
-            enableUpdateButton, updateStatusElement; // Update GUI elements
+            enableUpdateButton, updateStatusElement;
 
         // --- Default Values ---
         let initialTitle = '';
@@ -186,48 +257,72 @@
         let selfFileHandle = null; // To hold the FileSystemFileHandle
 
         // --- Helper: Capture Initial Title/Favicon ---
-        function captureInitialValues() { /* ... same as before ... */ }
+        function captureInitialValues() {
+            const tempTitle = document.getElementById('page-title');
+            const tempFavicon = document.getElementById('favicon-link');
+            if (tempTitle) initialTitle = tempTitle.textContent;
+            if (tempFavicon) initialFavicon = tempFavicon.href;
+        }
 
         // --- Helper: Get DOM Elements ---
         function getElements() {
-            // ... (get all previous elements) ...
-            searchContainer = document.getElementById('search-container'); greeting = document.getElementById('greeting'); searchBox = document.getElementById('search-box'); urlInput = document.getElementById('url-input'); submitSearchButton = document.getElementById('submit-search-button'); iframeContainer = document.getElementById('iframe-container'); contentIframe = document.getElementById('content-iframe'); closeButton = document.getElementById('close-button'); bodyElement = document.body; themeSelector = document.getElementById('theme-selector'); disclaimerElement = document.getElementById('disclaimer'); settingsButton = document.getElementById('settings-button'); settingsOverlay = document.getElementById('settings-overlay'); settingsPanel = document.getElementById('settings-panel'); closeSettingsButton = document.getElementById('close-settings-button'); titleInput = document.getElementById('title-input'); faviconInput = document.getElementById('favicon-input'); saveSettingsButton = document.getElementById('save-settings-button'); pageTitleElement = document.getElementById('page-title'); faviconLinkElement = document.getElementById('favicon-link');
-            // Get new elements
+            searchContainer = document.getElementById('search-container');
+            greeting = document.getElementById('greeting');
+            searchBox = document.getElementById('search-box');
+            urlInput = document.getElementById('url-input');
+            submitSearchButton = document.getElementById('submit-search-button');
+            iframeContainer = document.getElementById('iframe-container');
+            contentIframe = document.getElementById('content-iframe');
+            closeButton = document.getElementById('close-button');
+            bodyElement = document.body;
+            themeSelector = document.getElementById('theme-selector');
+            disclaimerElement = document.getElementById('disclaimer');
+            settingsButton = document.getElementById('settings-button');
+            settingsOverlay = document.getElementById('settings-overlay');
+            settingsPanel = document.getElementById('settings-panel');
+            closeSettingsButton = document.getElementById('close-settings-button');
+            titleInput = document.getElementById('title-input');
+            faviconInput = document.getElementById('favicon-input');
+            saveSettingsButton = document.getElementById('save-settings-button');
+            pageTitleElement = document.getElementById('page-title');
+            faviconLinkElement = document.getElementById('favicon-link');
             enableUpdateButton = document.getElementById('enable-update-button');
             updateStatusElement = document.getElementById('update-status');
 
              // Populate static parts if needed (do this once)
              if (themeSelector && themeSelector.options.length === 0) {
-                 const themes = ["light", "dark", "vscode-dark-plus", "monokai", "solarized-light", "solarized-dark"];
-                 themes.forEach(t => { const opt = document.createElement('option'); opt.value = t; opt.textContent = t.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()); themeSelector.appendChild(opt); });
+                 const themes = {
+                    "light": "Light",
+                    "dark": "Dark",
+                    "vscode-dark-plus": "VSCode Dark+",
+                    "monokai": "Monokai",
+                    "solarized-light": "Solarized Light",
+                    "solarized-dark": "Solarized Dark"
+                 };
+                 for (const [value, text] of Object.entries(themes)) {
+                     const opt = document.createElement('option');
+                     opt.value = value;
+                     opt.textContent = text;
+                     themeSelector.appendChild(opt);
+                 }
              }
-             if (settingsOverlay && !settingsPanel) { /* Inject settings panel HTML if needed, or assume it's in the static HTML */ }
              if (disclaimerElement && !disclaimerElement.textContent) { disclaimerElement.textContent = "This html file auto updates when connected to the internet. Only meant to be used by premium purchasers. Upon reloading this specific link shall disappear."; }
-
         }
 
         // --- IndexedDB Functions ---
         function openDB() {
             return new Promise((resolve, reject) => {
                 if (!window.indexedDB) {
-                    reject("IndexedDB not supported by this browser.");
+                    reject(new Error("IndexedDB not supported by this browser."));
                     return;
                 }
                 const request = indexedDB.open(DB_NAME, DB_VERSION);
-
-                request.onerror = (event) => reject("IndexedDB error: " + request.error);
-                request.onsuccess = (event) => {
-                    db = event.target.result;
-                    console.log("IndexedDB opened successfully.");
-                    resolve(db);
-                };
+                request.onerror = (event) => reject(new Error("IndexedDB error: " + request.error));
+                request.onsuccess = (event) => { db = event.target.result; console.log("IndexedDB opened successfully."); resolve(db); };
                 request.onupgradeneeded = (event) => {
                     console.log("Upgrading IndexedDB...");
                     db = event.target.result;
-                    if (!db.objectStoreNames.contains(HANDLE_STORE_NAME)) {
-                        db.createObjectStore(HANDLE_STORE_NAME);
-                        console.log("Created object store:", HANDLE_STORE_NAME);
-                    }
+                    if (!db.objectStoreNames.contains(HANDLE_STORE_NAME)) { db.createObjectStore(HANDLE_STORE_NAME); console.log("Created object store:", HANDLE_STORE_NAME); }
                 };
             });
         }
@@ -235,169 +330,132 @@
         function storeHandle(handle) {
             return new Promise(async (resolve, reject) => {
                 if (!db) { try { await openDB(); } catch (err) { reject(err); return; } }
-                 if (!db) { reject("DB not available after trying to open"); return; } // Check again
-
+                if (!db) { reject(new Error("DB not available after trying to open")); return; }
                 const transaction = db.transaction(HANDLE_STORE_NAME, 'readwrite');
                 const store = transaction.objectStore(HANDLE_STORE_NAME);
-                const request = store.put(handle, HANDLE_KEY); // Store the handle
-
+                const request = store.put(handle, HANDLE_KEY);
                 request.onsuccess = () => resolve();
-                request.onerror = () => reject("Error storing file handle: " + request.error);
+                request.onerror = () => reject(new Error("Error storing file handle: " + request.error));
             });
         }
 
         function getHandle() {
             return new Promise(async (resolve, reject) => {
-                 if (!db) { try { await openDB(); } catch (err) { reject(err); return; } }
-                 if (!db) { reject("DB not available after trying to open"); return; } // Check again
-
+                if (!db) { try { await openDB(); } catch (err) { reject(err); return; } }
+                if (!db) { reject(new Error("DB not available after trying to open")); return; }
                 const transaction = db.transaction(HANDLE_STORE_NAME, 'readonly');
                 const store = transaction.objectStore(HANDLE_STORE_NAME);
                 const request = store.get(HANDLE_KEY);
-
-                request.onsuccess = () => {
-                    selfFileHandle = request.result; // Store globally if needed
-                    resolve(request.result);
-                };
-                 request.onerror = () => reject("Error retrieving file handle: " + request.error);
+                request.onsuccess = () => { selfFileHandle = request.result; resolve(request.result); };
+                request.onerror = () => reject(new Error("Error retrieving file handle: " + request.error));
             });
         }
 
         // --- File System Access API Functions ---
         async function requestFileHandle() {
+             // Check for API support first
+             if (!('showOpenFilePicker' in window)) {
+                 setUpdateStatus("File System Access API not supported.", "error");
+                 if (enableUpdateButton) enableUpdateButton.classList.add('hidden'); // Hide button if unsupported
+                 return;
+             }
              setUpdateStatus("Requesting file access...", "warning");
              try {
-                 // Ask user to select the *specific* HTML file
-                 const [handle] = await window.showOpenFilePicker({
-                     types: [{ description: 'HTML Files', accept: { 'text/html': ['.html'] } }],
-                     multiple: false
-                 });
-
-                 // Verify permission and store the handle
-                 const permissionGranted = await verifyPermission(handle, true); // Request if needed
+                 const [handle] = await window.showOpenFilePicker({ types: [{ description: 'HTML Files', accept: { 'text/html': ['.html', '.htm'] } }], multiple: false });
+                 const permissionGranted = await verifyPermission(handle, true);
                  if (permissionGranted) {
-                     selfFileHandle = handle; // Update global handle
+                     selfFileHandle = handle;
                      await storeHandle(handle);
                      setUpdateStatus("File access granted and saved.", "success");
-                     if (enableUpdateButton) enableUpdateButton.classList.add('hidden'); // Hide button
-                     // Optional: Trigger an immediate update check now
-                     checkForUpdatesAndWrite();
+                     if (enableUpdateButton) enableUpdateButton.classList.add('hidden');
+                     checkForUpdatesAndWrite(); // Trigger check immediately
                  } else {
                      setUpdateStatus("Permission denied by user.", "error");
                  }
              } catch (err) {
-                 if (err.name === 'AbortError') {
-                     setUpdateStatus("File selection cancelled.", "warning");
-                 } else {
-                     console.error("Error requesting file handle:", err);
-                     setUpdateStatus("Error getting file access.", "error");
-                 }
+                 if (err.name === 'AbortError') { setUpdateStatus("File selection cancelled.", "warning"); }
+                 else { console.error("Error requesting file handle:", err); setUpdateStatus(`Error getting file access: ${err.message}`, "error"); }
              }
         }
 
         async function verifyPermission(fileHandle, request = false) {
-             if (!fileHandle) return false;
-             const options = { mode: 'readwrite' };
-             // Check if permission was already granted
-             if ((await fileHandle.queryPermission(options)) === 'granted') {
-                 return true;
+             if (!fileHandle || !fileHandle.queryPermission) return false; // Check existence of function
+             try {
+                 const options = { mode: 'readwrite' };
+                 if ((await fileHandle.queryPermission(options)) === 'granted') return true;
+                 if (request && (await fileHandle.requestPermission(options)) === 'granted') return true;
+             } catch (err) {
+                 console.error("Error verifying permission:", err);
+                 return false; // Assume no permission on error
              }
-             // If requested, ask for permission
-             if (request && (await fileHandle.requestPermission(options)) === 'granted') {
-                 return true;
-             }
-             // Permission was not granted
              return false;
         }
 
          async function writeFile(fileHandle, content) {
              if (!fileHandle) throw new Error("No file handle provided to write.");
-
              try {
-                 // Create a Writable stream
                  const writable = await fileHandle.createWritable();
-                 // Write the content
                  await writable.write(content);
-                 // Close the file and write data to disk
                  await writable.close();
                  console.log("File written successfully.");
                  return true;
              } catch (err) {
                  console.error("Error writing file:", err);
                  setUpdateStatus(`Error writing file: ${err.message}`, "error");
+                 // Attempt to clear the potentially bad handle if write fails? Risky.
+                 // selfFileHandle = null;
+                 // try { await storeHandle(null); } catch {}
+                 // if (enableUpdateButton) enableUpdateButton.classList.remove('hidden'); // Show enable button again
                  return false;
              }
          }
 
-
         // --- Update Function (Checks, Writes, Reloads) ---
-        let isCheckingUpdates = false; // Prevent concurrent checks
+        let isCheckingUpdates = false;
         async function checkForUpdatesAndWrite() {
-             if (isCheckingUpdates) {
-                 console.log("Update check already in progress.");
-                 return;
-             }
+             if (isCheckingUpdates) { console.log("Update check already in progress."); return; }
              if (!selfFileHandle) {
-                 console.log("No file handle stored. Cannot check for updates automatically yet.");
-                 // Ensure enable button is visible if handle is missing
-                 if (enableUpdateButton) enableUpdateButton.classList.remove('hidden');
-                 setUpdateStatus("Enable auto-update to check.", "warning");
+                 console.log("No file handle stored.");
+                 // Logic in initializeApp handles showing the enable button
                  return;
              }
-
-             // Ensure permission exists before fetching
-             const hasPermission = await verifyPermission(selfFileHandle, false); // Don't request here, check first
+             const hasPermission = await verifyPermission(selfFileHandle, false);
              if (!hasPermission) {
                  console.warn("Write permission not granted for stored handle.");
-                 setUpdateStatus("Permission lost or denied. Enable again.", "warning");
-                 if (enableUpdateButton) enableUpdateButton.classList.remove('hidden'); // Show button again
-                 // Clear the stale handle? Maybe not, let user re-enable.
-                 // selfFileHandle = null;
-                 // try { await storeHandle(null); } catch {} // Attempt to clear from DB
+                 setUpdateStatus("Permission lost. Enable auto-update again.", "warning");
+                 if (enableUpdateButton) enableUpdateButton.classList.remove('hidden');
                  return;
              }
 
              isCheckingUpdates = true;
-             setUpdateStatus("Checking for updates...", ""); // Clear previous status
+             setUpdateStatus("Checking for updates...", "");
              console.log("Checking for updates...");
-
              try {
-                 const response = await fetch(UPDATE_URL, { cache: 'no-store' });
-                 if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
+                 const response = await fetch(UPDATE_URL, { cache: 'no-store', mode: 'cors' }); // Ensure CORS mode if needed, though raw usually works
+                 if (!response.ok) throw new Error(`Fetch failed: ${response.status} ${response.statusText}`);
                  const newHtmlText = await response.text();
                  const currentHtmlText = document.documentElement.outerHTML;
 
                  if (newHtmlText && newHtmlText.trim() !== currentHtmlText.trim()) {
                      console.log("Update found! Attempting to write file...");
                      setUpdateStatus("Update found, writing file...", "warning");
-
-                     // Verify permission *again* right before writing (user might revoke)
-                     const canWrite = await verifyPermission(selfFileHandle, true); // Request if needed now
-                     if (!canWrite) {
-                         throw new Error("Permission denied before writing.");
-                     }
+                     // Verify permission again right before writing
+                     const canWrite = await verifyPermission(selfFileHandle, true);
+                     if (!canWrite) throw new Error("Permission denied before writing.");
 
                      const writeSuccess = await writeFile(selfFileHandle, newHtmlText);
-
                      if (writeSuccess) {
                          setUpdateStatus("Update applied! Reloading...", "success");
-                         // Wait a tiny bit for the user to see the message, then reload
-                         setTimeout(() => {
-                             window.location.reload(true); // Force reload from network/disk
-                         }, 1500); // 1.5 second delay
-                     } else {
-                         // writeFile function will set error status
-                     }
-
+                         setTimeout(() => { window.location.reload(true); }, 1500);
+                     } // else: writeFile sets error status
                  } else {
                      console.log("No update needed or content identical.");
                      setUpdateStatus("Already up to date.", "success");
-                     // Clear status after a delay
-                      setTimeout(() => setUpdateStatus("", ""), 5000);
+                     setTimeout(() => setUpdateStatus("", ""), 5000); // Clear status after delay
                  }
              } catch (error) {
                  console.error("Update check/write failed:", error);
-                 setUpdateStatus(`Update failed: ${error.message}`, "error");
+                 setUpdateStatus(`Update failed: ${error.message || 'Network error'}`, "error");
              } finally {
                  isCheckingUpdates = false;
              }
@@ -406,132 +464,217 @@
          function setUpdateStatus(message, type = "") {
              if (!updateStatusElement) return;
              updateStatusElement.textContent = message;
-             updateStatusElement.className = type; // 'success', 'warning', 'error', or ''
+             updateStatusElement.className = type;
          }
 
-
         // --- Theme Functions ---
-        // ... (applyTheme, saveTheme remain the same) ...
-        function applyTheme(themeName) { /* ... */ }
-        function saveTheme(themeName) { /* ... */ }
-
+        function applyTheme(themeName) {
+            console.log("Applying theme:", themeName);
+            if (!themeName) themeName = 'light';
+            document.documentElement.setAttribute('data-theme', themeName);
+            if (themeSelector) themeSelector.value = themeName;
+            try { // Update arrow color
+                let arrowColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-text-color').trim() || '#586069';
+                if (themeSelector) themeSelector.style.backgroundImage = `url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%225%22%20viewBox%3D%220%200%2010%205%22%3E%3Cpath%20fill%3D%22${encodeURIComponent(arrowColor)}%22%20d%3D%22M0%200l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E')`;
+            } catch (e) { console.warn("Could not update selector arrow color", e); }
+        }
+        function saveTheme(themeName) {
+             try { localStorage.setItem(THEME_STORAGE_KEY, themeName); }
+             catch (e) { console.error("LocalStorage unavailable. Theme preference won't be saved.", e); }
+        }
 
         // --- Customization Functions (Title & Favicon) ---
-        // ... (applyCustomization, loadCustomization, saveCustomization remain the same) ...
-        function applyCustomization(title, faviconUrl) { /* ... */ }
-        function loadCustomization() { /* ... */ }
-        function saveCustomization() { /* ... */ }
-
+        function applyCustomization(title, faviconUrl) {
+            if (!pageTitleElement || !faviconLinkElement) { console.warn("Title/Favicon element missing."); return; }
+            pageTitleElement.textContent = title || initialTitle;
+            const targetFaviconUrl = faviconUrl || initialFavicon;
+            if (faviconLinkElement.href !== targetFaviconUrl) { faviconLinkElement.href = targetFaviconUrl; }
+        }
+        function loadCustomization() {
+            let savedTitle = initialTitle; let savedFaviconUrl = initialFavicon;
+            try {
+                savedTitle = localStorage.getItem(TITLE_STORAGE_KEY) || initialTitle;
+                savedFaviconUrl = localStorage.getItem(FAVICON_STORAGE_KEY) || initialFavicon;
+            } catch (e) { console.error("LocalStorage unavailable reading customization.", e); }
+            applyCustomization(savedTitle, savedFaviconUrl);
+            if (titleInput) titleInput.value = savedTitle;
+            if (faviconInput) faviconInput.value = savedFaviconUrl;
+        }
+        function saveCustomization() {
+            if (!titleInput || !faviconInput) return;
+            const newTitle = titleInput.value.trim();
+            const newFaviconUrl = faviconInput.value.trim();
+            applyCustomization(newTitle, newFaviconUrl);
+            try {
+                localStorage.setItem(TITLE_STORAGE_KEY, newTitle);
+                localStorage.setItem(FAVICON_STORAGE_KEY, newFaviconUrl);
+                console.log("Settings saved.");
+            } catch (e) { console.error("LocalStorage unavailable saving customization.", e); alert("Error saving settings."); }
+            if (settingsOverlay) settingsOverlay.classList.remove('visible');
+        }
 
         // --- Panic Mode & Core App Functions ---
-        // ... (Mostly same, ensure elements are checked) ...
-        function enterPanicMode() { /* ... */ }
-        function exitPanicMode() { /* ... */ }
-        function showRegularIframe(url) { /* ... */ }
-        function closeRegularIframe() { /* ... */ }
-        function performSearch() { /* ... */ }
-        function addShakeAnimation() { /* ... */ }
+        function enterPanicMode() {
+            if (!contentIframe || !bodyElement || !localStorage || !searchContainer || !iframeContainer || !disclaimerElement) return;
+            console.log("Entering Panic Mode");
+            contentIframe.src = PANIC_URL;
+            bodyElement.classList.add('panic-active');
+            try { localStorage.setItem(PANIC_STORAGE_KEY, 'true'); } catch (e) { console.error("LocalStorage unavailable.", e); }
+            if(iframeContainer) iframeContainer.classList.add('visible'); // Ensure visible if class somehow failed
+        }
+        function exitPanicMode() {
+             if (!bodyElement || !localStorage || !iframeContainer || !contentIframe || !searchContainer || !disclaimerElement) return;
+             console.log("Exiting Panic Mode");
+             try { localStorage.removeItem(PANIC_STORAGE_KEY); } catch (e) { console.error("LocalStorage unavailable.", e); }
+             bodyElement.classList.remove('panic-active');
+             if(iframeContainer) iframeContainer.classList.remove('visible');
+             if(contentIframe) contentIframe.src = 'about:blank';
+             // Reattach listeners if needed
+             attachNormalModeListeners();
+        }
+        function showRegularIframe(url) {
+            if (!bodyElement || bodyElement.classList.contains('panic-active') || !contentIframe || !iframeContainer || !searchContainer || !disclaimerElement) return;
+            let finalUrl = url.trim();
+            if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) finalUrl = 'https://' + finalUrl;
+            console.log("Loading regular URL:", finalUrl);
+            try {
+                contentIframe.src = finalUrl;
+                iframeContainer.classList.add('visible');
+                searchContainer.style.opacity = '0'; searchContainer.style.visibility = 'hidden'; searchContainer.style.pointerEvents = 'none';
+                if (updateControls) { updateControls.style.opacity = '0'; updateControls.style.visibility = 'hidden'; } // Hide update controls too
+                disclaimerElement.classList.add('hidden');
+            } catch (e) {
+                console.error("Error setting iframe src:", e); alert("Could not load the URL.");
+                iframeContainer.classList.remove('visible'); searchContainer.style.opacity = '1'; searchContainer.style.visibility = 'visible'; searchContainer.style.pointerEvents = 'auto';
+                 if (updateControls) { updateControls.style.opacity = '1'; updateControls.style.visibility = 'visible'; }
+                 disclaimerElement.classList.remove('hidden');
+            }
+        }
+        function closeRegularIframe() {
+             if (!bodyElement || bodyElement.classList.contains('panic-active') || !iframeContainer || !contentIframe || !searchContainer || !disclaimerElement) return;
+             iframeContainer.classList.remove('visible');
+             contentIframe.src = 'about:blank';
+             searchContainer.style.opacity = '1'; searchContainer.style.visibility = 'visible'; searchContainer.style.pointerEvents = 'auto';
+              if (updateControls) { updateControls.style.opacity = '1'; updateControls.style.visibility = 'visible'; }
+             disclaimerElement.classList.remove('hidden');
+        }
+        function performSearch() {
+            if (!urlInput || !searchBox || !disclaimerElement) return;
+            const url = urlInput.value.trim();
+            if (url) { showRegularIframe(url); }
+            else {
+                console.log("User entered no URL.");
+                if (!document.getElementById('shake-animation-style')) addShakeAnimation();
+                searchBox.style.animation = 'shake 0.5s ease-in-out';
+                setTimeout(() => { if(searchBox) searchBox.style.animation = ''; }, 500);
+            }
+        }
+        function addShakeAnimation() {
+             const styleId = 'shake-animation-style';
+             if (document.getElementById(styleId)) return;
+             const styleSheet = document.createElement("style"); styleSheet.id = styleId; styleSheet.type = "text/css";
+             styleSheet.innerText = `@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }`;
+             document.head.appendChild(styleSheet);
+        }
 
 
         // --- Initialization ---
         async function initializeApp() {
             getElements(); // Get DOM elements
 
-            // Try to open IndexedDB early
+            // Try to open IndexedDB early & retrieve handle
             try {
                 await openDB();
-                selfFileHandle = await getHandle(); // Attempt to retrieve stored handle
+                selfFileHandle = await getHandle();
                 if (selfFileHandle) {
                      console.log("Retrieved stored file handle.");
-                     // Check initial permission silently
                      const hasPermission = await verifyPermission(selfFileHandle, false);
-                     if (hasPermission) {
-                        if (enableUpdateButton) enableUpdateButton.classList.add('hidden'); // Hide button
-                        setUpdateStatus("Auto-update enabled.", "success");
-                         // Optional: Start first check automatically after slight delay
-                         setTimeout(checkForUpdatesAndWrite, 2000);
-                     } else {
-                         setUpdateStatus("Permission needed. Enable auto-update.", "warning");
-                        if (enableUpdateButton) enableUpdateButton.classList.remove('hidden');
-                     }
+                     if (hasPermission) { if (enableUpdateButton) enableUpdateButton.classList.add('hidden'); setUpdateStatus("Auto-update enabled.", "success"); setTimeout(checkForUpdatesAndWrite, 2500); } // Check after delay
+                     else { setUpdateStatus("Permission needed. Enable auto-update.", "warning"); if (enableUpdateButton) enableUpdateButton.classList.remove('hidden'); }
                  } else {
-                    console.log("No stored file handle found.");
-                    setUpdateStatus("Enable auto-update for latest versions.", "warning");
-                    if (enableUpdateButton) enableUpdateButton.classList.remove('hidden');
+                    console.log("No stored file handle found."); setUpdateStatus("Enable auto-update for latest versions.", "warning");
+                    if (enableUpdateButton && 'showOpenFilePicker' in window) enableUpdateButton.classList.remove('hidden'); // Only show if API supported
+                    else if (enableUpdateButton) enableUpdateButton.classList.add('hidden'); // Hide if API not supported
                  }
             } catch (err) {
-                console.error("IndexedDB initialization failed:", err);
+                console.error("IndexedDB/Handle initialization failed:", err);
                 setUpdateStatus("Cannot access storage for updates.", "error");
-                if (enableUpdateButton) enableUpdateButton.classList.add('hidden'); // Hide button if storage fails
+                if (enableUpdateButton) enableUpdateButton.classList.add('hidden');
             }
 
-            // Load Title/Favicon FIRST (doesn't depend on async)
-            loadCustomization();
+            loadCustomization(); // Load Title/Favicon
+            let savedTheme = 'light'; try { savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light'; } catch (e) { console.error("LocalStorage error reading theme.", e); } applyTheme(savedTheme); // Apply theme
 
-            // Apply saved theme
-            let savedTheme = 'light';
-            try { savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light'; }
-            catch (e) { console.error("LocalStorage error reading theme.", e); }
-            applyTheme(savedTheme);
-
-            // Check for panic mode
-            let isPanic = false;
+            let isPanic = false; // Check panic mode
              try { if (localStorage.getItem(PANIC_STORAGE_KEY) === 'true') { isPanic = true; if (bodyElement) enterPanicMode(); else document.addEventListener('DOMContentLoaded', enterPanicMode); } }
              catch (e) { console.error("LocalStorage error checking panic.", e); }
 
-             // Disclaimer visibility (Only show if not panic)
-             if (disclaimerElement) { if (isPanic) disclaimerElement.classList.add('hidden'); else disclaimerElement.classList.remove('hidden'); }
+             if (disclaimerElement) { if (isPanic) disclaimerElement.classList.add('hidden'); else disclaimerElement.classList.remove('hidden'); } // Disclaimer visibility
 
-            // Setup listeners
-            if (!isPanic) {
-                 if (submitSearchButton) submitSearchButton.addEventListener('click', performSearch);
-                 if (urlInput) urlInput.addEventListener('keypress', (event) => { if (event.key === 'Enter') { event.preventDefault(); performSearch(); } });
-                 if (closeButton) closeButton.addEventListener('click', closeRegularIframe);
-             } else { if(searchContainer) { /* Hide search container */ } }
-
-             // Theme selector listener
-             if (themeSelector) { themeSelector.addEventListener('change', (event) => { applyTheme(event.target.value); saveTheme(event.target.value); }); }
-            // Settings GUI Listeners
-            if (settingsButton) settingsButton.addEventListener('click', () => { /* ... */ });
-            if (closeSettingsButton) closeSettingsButton.addEventListener('click', () => { /* ... */ });
-            if (saveSettingsButton) saveSettingsButton.addEventListener('click', saveCustomization);
-            if (settingsOverlay) settingsOverlay.addEventListener('click', (event) => { /* ... */ });
-            // Update Button Listener
-            if(enableUpdateButton) enableUpdateButton.addEventListener('click', requestFileHandle);
-
-
-            // Always setup global key listener
-            window.addEventListener('keydown', handleGlobalKeys);
-            // Add shake animation CSS
-            addShakeAnimation();
+            attachListeners(isPanic); // Attach all event listeners
+            addShakeAnimation(); // Add animation style if needed
         }
 
-         function handleGlobalKeys(event) { /* ... (panic/exit logic same) ... */ }
+        // --- Event Listeners ---
+        function attachListeners(isPanic) {
+            // Always attach global keys and theme selector
+             window.addEventListener('keydown', handleGlobalKeys);
+             if (themeSelector) themeSelector.addEventListener('change', (event) => { applyTheme(event.target.value); saveTheme(event.target.value); });
+             // Settings GUI Listeners
+             if (settingsButton) settingsButton.addEventListener('click', () => { loadCustomization(); if(settingsOverlay) settingsOverlay.classList.add('visible'); });
+             if (closeSettingsButton) closeSettingsButton.addEventListener('click', () => { if(settingsOverlay) settingsOverlay.classList.remove('visible'); });
+             if (saveSettingsButton) saveSettingsButton.addEventListener('click', saveCustomization);
+             if (settingsOverlay) settingsOverlay.addEventListener('click', (event) => { if (event.target === settingsOverlay) settingsOverlay.classList.remove('visible'); });
+             // Update Button Listener
+             if(enableUpdateButton) enableUpdateButton.addEventListener('click', requestFileHandle);
+
+            // Attach normal mode listeners only if not in panic
+            if (!isPanic) {
+                attachNormalModeListeners();
+            } else {
+                 // Ensure UI hidden if starting in panic
+                 if(searchContainer) { searchContainer.style.opacity = '0'; searchContainer.style.visibility = 'hidden'; searchContainer.style.pointerEvents = 'none'; }
+                 if(updateControls) { updateControls.style.opacity = '0'; updateControls.style.visibility = 'hidden'; updateControls.style.pointerEvents = 'none'; }
+            }
+        }
+
+         function attachNormalModeListeners() {
+             // Remove old listeners first? Maybe not necessary if elements don't change.
+              if (submitSearchButton) submitSearchButton.addEventListener('click', performSearch);
+              if (urlInput) urlInput.addEventListener('keypress', handleUrlInputKeypress);
+              if (closeButton) closeButton.addEventListener('click', closeRegularIframe);
+         }
+         // Separate handler to potentially remove later if needed
+         function handleUrlInputKeypress(event) {
+             if (event.key === 'Enter' || event.keyCode === 13) {
+                  event.preventDefault();
+                  performSearch();
+              }
+         }
+
+
+         function handleGlobalKeys(event) {
+             // Prevent interfering with inputs/textareas if needed
+             // const activeElement = document.activeElement;
+             // if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA')) {
+             //    if (event.key !== 'Escape') return; // Allow Escape to close modals maybe
+             // }
+
+             if (event.key === '`') { event.preventDefault(); enterPanicMode(); }
+             else if (event.ctrlKey && event.altKey && (event.key === 'x' || event.key === 'X')) {
+                  event.preventDefault();
+                  if (bodyElement && bodyElement.classList.contains('panic-active')) {
+                     exitPanicMode();
+                  } else { console.log("Ctrl+Alt+X pressed, but not in panic mode."); }
+             }
+         }
 
         // --- Execution Start ---
-        // No update check logic here anymore, it's handled in initializeApp / button click
-
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initializeApp);
         } else {
             initializeApp();
         }
-
-        // --- Re-paste functions if they were removed ---
-        function applyTheme(themeName) { /* ... same as before ... */ }
-        function saveTheme(themeName) { /* ... same as before ... */ }
-        function applyCustomization(title, faviconUrl) { /* ... same as before ... */ }
-        function loadCustomization() { /* ... same as before ... */ }
-        function saveCustomization() { /* ... same as before ... */ }
-        function enterPanicMode() { /* ... same as before ... */ }
-        function exitPanicMode() { /* ... same as before ... */ }
-        function showRegularIframe(url) { /* ... same as before ... */ }
-        function closeRegularIframe() { /* ... same as before ... */ }
-        function performSearch() { /* ... same as before ... */ }
-        function addShakeAnimation() { /* ... same as before ... */ }
-        function captureInitialValues() { /* ... same as before ... */ }
-        function handleGlobalKeys(event) { /* ... same as before ... */ }
-
 
     </script>
 
