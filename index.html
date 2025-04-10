@@ -11,97 +11,327 @@
 
     <style>
         /* --- CSS Variables (Themes) --- */
-        :root { /* Light Theme */
-            --bg-color: #f0f2f5; --text-color: #24292e; --secondary-text-color: #586069;
-            --input-bg: #ffffff; --input-border: #d1d5da; --placeholder-color: #aaa;
-            --primary-btn-bg: #007bff; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #0056b3; --primary-btn-active-bg: #004085;
-            --secondary-btn-bg: rgba(40, 40, 40, 0.8); --secondary-btn-text: #ffffff; --secondary-btn-hover-bg: rgba(0, 0, 0, 1);
-            --shadow-color: rgba(0, 0, 0, 0.1); --iframe-bg: #ffffff;
-            --selector-bg: #ffffff; --selector-border: #d1d5da; --selector-text: #24292e; --link-color: #0366d6;
-        }
-        html[data-theme="dark"] {
-            --bg-color: #1e1e1e; --text-color: #d4d4d4; --secondary-text-color: #cccccc;
-            --input-bg: #3c3c3c; --input-border: #555555; --placeholder-color: #888888;
-            --primary-btn-bg: #0e639c; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #1177bb; --primary-btn-active-bg: #158bcd;
-            --secondary-btn-bg: rgba(200, 200, 200, 0.7); --secondary-btn-text: #1e1e1e; --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9);
-            --shadow-color: rgba(255, 255, 255, 0.05); --iframe-bg: #252526;
-            --selector-bg: #3c3c3c; --selector-border: #555555; --selector-text: #d4d4d4; --link-color: #4e94ce;
-        }
-        html[data-theme="vscode-dark-plus"] {
-             --bg-color: #1e1e1e; --text-color: #d4d4d4; --secondary-text-color: #a0a0a0; --input-bg: #3c3c3c; --input-border: #3c3c3c; --placeholder-color: #7f7f7f;
-             --primary-btn-bg: #0e639c; --primary-btn-text: #ffffff; --primary-btn-hover-bg: #1177bb; --primary-btn-active-bg: #158bcd;
-             --secondary-btn-bg: rgba(180, 180, 180, 0.7); --secondary-btn-text: #1e1e1e; --secondary-btn-hover-bg: rgba(210, 210, 210, 0.9);
-             --shadow-color: rgba(0, 0, 0, 0.3); --iframe-bg: #1e1e1e; --selector-bg: #3c3c3c; --selector-border: #3c3c3c; --selector-text: #d4d4d4; --link-color: #4e94ce;
-        }
-        html[data-theme="monokai"] {
-            --bg-color: #272822; --text-color: #f8f8f2; --secondary-text-color: #a9a9a9; --input-bg: #3e3d32; --input-border: #5b5a4e; --placeholder-color: #9e9e9e;
-            --primary-btn-bg: #ae81ff; --primary-btn-text: #272822; --primary-btn-hover-bg: #be95ff; --primary-btn-active-bg: #cfadff;
-            --secondary-btn-bg: rgba(200, 200, 200, 0.7); --secondary-btn-text: #272822; --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9);
-            --shadow-color: rgba(0, 0, 0, 0.3); --iframe-bg: #272822; --selector-bg: #3e3d32; --selector-border: #5b5a4e; --selector-text: #f8f8f2; --link-color: #66d9ef;
-        }
-        html[data-theme="solarized-light"] {
-            --bg-color: #fdf6e3; --text-color: #657b83; --secondary-text-color: #93a1a1; --input-bg: #eee8d5; --input-border: #93a1a1; --placeholder-color: #93a1a1;
-            --primary-btn-bg: #268bd2; --primary-btn-text: #fdf6e3; --primary-btn-hover-bg: #1a6a9e; --primary-btn-active-bg: #0f4c75;
-            --secondary-btn-bg: rgba(88, 110, 117, 0.8); --secondary-btn-text: #fdf6e3; --secondary-btn-hover-bg: rgba(40, 50, 55, 1);
-            --shadow-color: rgba(0, 0, 0, 0.08); --iframe-bg: #fdf6e3; --selector-bg: #eee8d5; --selector-border: #93a1a1; --selector-text: #657b83; --link-color: #2aa198;
-        }
-        html[data-theme="solarized-dark"] {
-             --bg-color: #002b36; --text-color: #839496; --secondary-text-color: #586e75; --input-bg: #073642; --input-border: #586e75; --placeholder-color: #586e75;
-             --primary-btn-bg: #268bd2; --primary-btn-text: #fdf6e3; --primary-btn-hover-bg: #1f7bbd; --primary-btn-active-bg: #1a6a9e;
-             --secondary-btn-bg: rgba(147, 161, 161, 0.7); --secondary-btn-text: #002b36; --secondary-btn-hover-bg: rgba(180, 190, 190, 0.9);
-             --shadow-color: rgba(255, 255, 255, 0.05); --iframe-bg: #002b36; --selector-bg: #073642; --selector-border: #586e75; --selector-text: #839496; --link-color: #2aa198;
+        :root {
+            /* Default: Light Theme */
+            --bg-color: #f0f2f5;
+            --text-color: #24292e;
+            --secondary-text-color: #586069;
+            --muted-text-color: #6a737d; /* For disclaimer */
+            --input-bg: #ffffff;
+            --input-border: #d1d5da;
+            --placeholder-color: #aaa;
+            --primary-btn-bg: #007bff;
+            --primary-btn-text: #ffffff;
+            --primary-btn-hover-bg: #0056b3;
+            --primary-btn-active-bg: #004085;
+            --secondary-btn-bg: rgba(40, 40, 40, 0.8);
+            --secondary-btn-text: #ffffff;
+            --secondary-btn-hover-bg: rgba(0, 0, 0, 1);
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --iframe-bg: #ffffff;
+            --selector-bg: #ffffff;
+            --selector-border: #d1d5da;
+            --selector-text: #24292e;
+            --link-color: #0366d6;
         }
 
-        /* --- Base Styles --- */
+        html[data-theme="dark"] {
+            --bg-color: #1e1e1e;
+            --text-color: #d4d4d4;
+            --secondary-text-color: #cccccc;
+            --muted-text-color: #8b949e; /* For disclaimer */
+            --input-bg: #3c3c3c;
+            --input-border: #555555;
+            --placeholder-color: #888888;
+            --primary-btn-bg: #0e639c;
+            --primary-btn-text: #ffffff;
+            --primary-btn-hover-bg: #1177bb;
+            --primary-btn-active-bg: #158bcd;
+            --secondary-btn-bg: rgba(200, 200, 200, 0.7);
+            --secondary-btn-text: #1e1e1e;
+            --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9);
+            --shadow-color: rgba(255, 255, 255, 0.05);
+            --iframe-bg: #252526;
+            --selector-bg: #3c3c3c;
+            --selector-border: #555555;
+            --selector-text: #d4d4d4;
+            --link-color: #4e94ce;
+        }
+
+        html[data-theme="vscode-dark-plus"] {
+            --bg-color: #1e1e1e;
+            --text-color: #d4d4d4;
+            --secondary-text-color: #a0a0a0;
+            --muted-text-color: #8b949e;
+            --input-bg: #3c3c3c;
+            --input-border: #3c3c3c;
+            --placeholder-color: #7f7f7f;
+            --primary-btn-bg: #0e639c; /* VS Code blue */
+            --primary-btn-text: #ffffff;
+            --primary-btn-hover-bg: #1177bb;
+            --primary-btn-active-bg: #158bcd;
+            --secondary-btn-bg: rgba(180, 180, 180, 0.7);
+            --secondary-btn-text: #1e1e1e;
+            --secondary-btn-hover-bg: rgba(210, 210, 210, 0.9);
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --iframe-bg: #1e1e1e;
+            --selector-bg: #3c3c3c;
+            --selector-border: #3c3c3c;
+            --selector-text: #d4d4d4;
+            --link-color: #4e94ce;
+        }
+
+        html[data-theme="monokai"] {
+            --bg-color: #272822;
+            --text-color: #f8f8f2;
+            --secondary-text-color: #a9a9a9;
+            --muted-text-color: #75715e;
+            --input-bg: #3e3d32;
+            --input-border: #5b5a4e;
+            --placeholder-color: #9e9e9e;
+            --primary-btn-bg: #ae81ff; /* Purple accent */
+            --primary-btn-text: #272822;
+            --primary-btn-hover-bg: #be95ff;
+            --primary-btn-active-bg: #cfadff;
+            --secondary-btn-bg: rgba(200, 200, 200, 0.7);
+            --secondary-btn-text: #272822;
+            --secondary-btn-hover-bg: rgba(230, 230, 230, 0.9);
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --iframe-bg: #272822;
+            --selector-bg: #3e3d32;
+            --selector-border: #5b5a4e;
+            --selector-text: #f8f8f2;
+            --link-color: #66d9ef; /* Cyan */
+        }
+
+         html[data-theme="solarized-light"] {
+            --bg-color: #fdf6e3; /* Base */
+            --text-color: #657b83; /* Body text */
+            --secondary-text-color: #93a1a1; /* Comments / Secondary */
+            --muted-text-color: #93a1a1;
+            --input-bg: #eee8d5; /* Base1 */
+            --input-border: #93a1a1;
+            --placeholder-color: #93a1a1;
+            --primary-btn-bg: #268bd2; /* Blue */
+            --primary-btn-text: #fdf6e3;
+            --primary-btn-hover-bg: #1a6a9e;
+            --primary-btn-active-bg: #0f4c75;
+            --secondary-btn-bg: rgba(88, 110, 117, 0.8); /* Base01 */
+            --secondary-btn-text: #fdf6e3;
+            --secondary-btn-hover-bg: rgba(40, 50, 55, 1);
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --iframe-bg: #fdf6e3;
+            --selector-bg: #eee8d5;
+            --selector-border: #93a1a1;
+            --selector-text: #657b83;
+            --link-color: #2aa198; /* Cyan */
+        }
+
+        html[data-theme="solarized-dark"] {
+            --bg-color: #002b36; /* Base03 */
+            --text-color: #839496; /* Base0 */
+            --secondary-text-color: #586e75; /* Base01 Comments */
+            --muted-text-color: #586e75;
+            --input-bg: #073642; /* Base02 */
+            --input-border: #586e75;
+            --placeholder-color: #586e75;
+            --primary-btn-bg: #268bd2; /* Blue */
+            --primary-btn-text: #fdf6e3; /* Light text on blue */
+            --primary-btn-hover-bg: #1f7bbd;
+            --primary-btn-active-bg: #1a6a9e;
+            --secondary-btn-bg: rgba(147, 161, 161, 0.7); /* Base00 */
+            --secondary-btn-text: #002b36; /* Dark text */
+            --secondary-btn-hover-bg: rgba(180, 190, 190, 0.9);
+            --shadow-color: rgba(255, 255, 255, 0.05);
+            --iframe-bg: #002b36;
+            --selector-bg: #073642;
+            --selector-border: #586e75;
+            --selector-text: #839496;
+            --link-color: #2aa198; /* Cyan */
+        }
+
+
+        /* --- Base Styles using Variables --- */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { height: 100%; overflow: hidden; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; }
-        a { color: var(--link-color); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease; /* Theme change transition */
+            position: relative; /* Needed for absolute positioning of disclaimer */
+            min-height: 100%; /* Ensure body takes full height for bottom positioning */
+        }
+        a { color: var(--link-color); } /* Style links */
 
         /* --- Search Area --- */
-        #search-container { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 20px; transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; opacity: 1; visibility: visible; }
-        #search-box { display: flex; width: 100%; max-width: 600px; background-color: var(--input-bg); border: 1px solid var(--input-border); border-radius: 25px; box-shadow: 0 5px 15px var(--shadow-color); overflow: hidden; margin-bottom: 20px; transition: background-color 0.3s ease, border-color 0.3s ease; }
-        #url-input { flex-grow: 1; padding: 15px 20px; font-size: 1em; border: none; outline: none; background-color: transparent; color: var(--text-color); }
-        #url-input::placeholder { color: var(--placeholder-color); opacity: 1; }
-        #submit-search-button { padding: 0 25px; font-size: 1em; font-weight: 500; color: var(--primary-btn-text); background-color: var(--primary-btn-bg); border: none; cursor: pointer; transition: background-color 0.2s ease; white-space: nowrap; line-height: 50px; height: 50px; }
+        #search-container {
+            display: flex;
+            flex-direction: column; /* Stack search box and theme selector */
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Take full viewport height */
+            padding: 20px;
+            transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+            opacity: 1;
+            visibility: visible;
+            text-align: center; /* Center greeting text */
+        }
+        #greeting {
+            font-size: 1.4em; /* Adjust size as needed */
+            font-weight: 500;
+            margin-bottom: 25px; /* Space below greeting */
+            color: var(--text-color);
+             max-width: 600px; /* Keep it aligned with search box */
+             width: 100%;
+        }
+        #search-box {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 25px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            overflow: hidden;
+            margin-bottom: 20px; /* Space between search and theme selector */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        #url-input {
+            flex-grow: 1;
+            padding: 15px 20px;
+            font-size: 1em;
+            border: none;
+            outline: none;
+            background-color: transparent; /* Inherits from #search-box */
+            color: var(--text-color);
+        }
+        #url-input::placeholder {
+            color: var(--placeholder-color);
+            opacity: 1; /* Ensure placeholder is visible */
+        }
+        #submit-search-button {
+            padding: 0 25px; /* Adjusted padding to align height */
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--primary-btn-text);
+            background-color: var(--primary-btn-bg);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            white-space: nowrap;
+            line-height: 50px; /* Match input height roughly */
+            height: 50px; /* Explicit height */
+        }
         #submit-search-button:hover { background-color: var(--primary-btn-hover-bg); }
         #submit-search-button:active { background-color: var(--primary-btn-active-bg); }
 
         /* --- Theme Selector --- */
-        #theme-controls { display: flex; align-items: center; } /* Use flex for label+select alignment */
-        #theme-controls label { margin-right: 8px; font-size: 0.9em; color: var(--secondary-text-color); }
-        #theme-selector { padding: 8px 12px; font-size: 0.9em; border-radius: 6px; border: 1px solid var(--selector-border); background-color: var(--selector-bg); color: var(--selector-text); cursor: pointer; outline: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23586069%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 10px center; background-size: 10px auto; padding-right: 30px; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
-        #theme-selector:hover { border-color: var(--primary-btn-bg); }
-        /* Simple way to change arrow color for dark themes - might need refinement */
-        html[data-theme="dark"] #theme-selector, html[data-theme="vscode-dark-plus"] #theme-selector, html[data-theme="monokai"] #theme-selector, html[data-theme="solarized-dark"] #theme-selector {
-             background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cccccc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+         #theme-controls {
+             margin-top: 10px; /* Give it a little space from search box */
+         }
+        #theme-selector {
+            padding: 8px 12px;
+            font-size: 0.9em;
+            border-radius: 6px;
+            border: 1px solid var(--selector-border);
+            background-color: var(--selector-bg);
+            color: var(--selector-text);
+            cursor: pointer;
+            outline: none;
+             -webkit-appearance: none; -moz-appearance: none; appearance: none;
+             /* Custom arrow indicator - simple SVG */
+             background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%225%22%20viewBox%3D%220%200%2010%205%22%3E%3Cpath%20fill%3D%22${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--secondary-text-color').trim() || '#586069') /* More robust arrow color */}%22%20d%3D%22M0%200l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px auto;
+            padding-right: 30px; /* Space for arrow */
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            vertical-align: middle; /* Align with label */
         }
+         #theme-selector-label {
+             margin-right: 8px;
+             font-size: 0.9em;
+             color: var(--secondary-text-color);
+             vertical-align: middle;
+         }
+        #theme-selector:hover { border-color: var(--primary-btn-bg); }
+
 
         /* --- Iframe & Controls --- */
-        #iframe-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; visibility: hidden; opacity: 0; transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s; z-index: 1000; background-color: var(--iframe-bg); }
+        #iframe-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            visibility: hidden; opacity: 0;
+            transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+            z-index: 1000;
+            background-color: var(--iframe-bg);
+        }
         #iframe-container.visible { visibility: visible; opacity: 1; transition: opacity 0.4s ease-in-out; }
-        #content-iframe { width: 100%; height: 100%; border: none; background-color: var(--iframe-bg); }
-        #close-button { position: fixed; top: 15px; right: 15px; width: 35px; height: 35px; background-color: var(--secondary-btn-bg); color: var(--secondary-btn-text); border: none; border-radius: 50%; font-size: 20px; font-weight: bold; line-height: 35px; text-align: center; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.3s ease, visibility 0s linear 0.3s; z-index: 1001; visibility: hidden; opacity: 0; }
+        #content-iframe {
+            width: 100%; height: 100%; border: none;
+            background-color: var(--iframe-bg);
+        }
+        #close-button {
+            position: fixed; top: 15px; right: 15px; width: 35px; height: 35px;
+            background-color: var(--secondary-btn-bg);
+            color: var(--secondary-btn-text);
+            border: none; border-radius: 50%;
+            font-size: 20px; font-weight: bold; line-height: 35px; text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+            z-index: 1001;
+            visibility: hidden; opacity: 0;
+        }
         #iframe-container.visible #close-button { visibility: visible; opacity: 1; transition: opacity 0.3s ease-in-out 0.2s, visibility 0s linear 0s, background-color 0.2s ease, color 0.2s ease; }
         #close-button:hover { background-color: var(--secondary-btn-hover-bg); }
         #close-button:active { transform: scale(0.95); }
 
+        /* --- Disclaimer --- */
+        #disclaimer {
+            position: fixed; /* Fixed at bottom */
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75em; /* Smaller text */
+            color: var(--muted-text-color);
+            padding: 0 15px; /* Padding for smaller screens */
+            z-index: 5; /* Below most interactive elements but above body bg */
+            visibility: visible; /* Visible by default, hidden via JS */
+            opacity: 1;
+            transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+        }
+        #disclaimer.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+        }
+
         /* --- Panic Mode Styles --- */
-        body.panic-active #search-container { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.1s ease, visibility 0s linear 0.1s; }
-        body.panic-active #iframe-container { visibility: visible; opacity: 1; transition: none !important; }
+        body.panic-active #search-container {
+            opacity: 0; visibility: hidden; pointer-events: none;
+            transition: opacity 0.1s ease, visibility 0s linear 0.1s;
+        }
+        body.panic-active #iframe-container {
+            visibility: visible; opacity: 1;
+            transition: none !important;
+        }
         body.panic-active #close-button { display: none !important; }
+        body.panic-active #disclaimer { display: none !important; } /* Also hide disclaimer in panic */
+
     </style>
 </head>
 <body>
     <!-- DOC_CONTENT_START -->
 
     <div id="search-container">
+        <h1 id="greeting">Hello, what website do you want to unblock?</h1>
         <div id="search-box">
-            <input type="text" id="url-input" placeholder="V1.1 Enter URL (e.g., https://wikipedia.org)">
+            <input type="text" id="url-input" placeholder="V1.2 Enter URL (e.g., https://wikipedia.org)">
             <button id="submit-search-button">Search</button>
         </div>
         <div id="theme-controls">
-             <label for="theme-selector">Theme:</label>
+             <label id="theme-selector-label" for="theme-selector">Theme:</label>
              <select id="theme-selector">
                 <option value="light">Light</option>
                 <option value="dark">Dark</option>
@@ -118,6 +348,11 @@
         <iframe id="content-iframe" src="about:blank" frameborder="0" allowfullscreen></iframe>
     </div>
 
+    <!-- Disclaimer Added Here -->
+    <p id="disclaimer">
+        This html file auto updates when connected to the internet. Only meant to be used by premium purchasers. Upon reloading this specific link shall disappear.
+    </p>
+
      <!-- DOC_CONTENT_END -->
 
     <script>
@@ -128,46 +363,12 @@
         const UPDATE_URL = "https://raw.githubusercontent.com/H644b/UpdatesforSecret/main/index.html";
         const UPDATE_HASH_FLAG = '#updated';
 
-        // --- DOM Elements (will be populated by getElements) ---
-        let searchContainer, searchBox, urlInput, submitSearchButton, iframeContainer, contentIframe, closeButton, bodyElement, themeSelector;
+        // --- DOM Elements ---
+        let searchContainer, greeting, searchBox, urlInput, submitSearchButton, iframeContainer, contentIframe, closeButton, bodyElement, themeSelector, disclaimerElement; // Added greeting, disclaimerElement
 
-        // --- Early Definition of Global Key Handler ---
-        // Define the handler function early so it's available when listener is attached.
-        // It relies on DOM elements, so checks inside are important.
-        function handleGlobalKeys(event) {
-             // Panic Key Check (Backtick `)
-             if (event.key === '`') {
-                 console.log("Backtick key pressed"); // Debug log
-                 event.preventDefault();
-                 // Ensure elements are available before calling enterPanicMode
-                 if (bodyElement && contentIframe && searchContainer && iframeContainer) {
-                     enterPanicMode();
-                 } else {
-                     console.warn("Cannot enter panic mode: DOM elements not ready yet.");
-                 }
-             }
-             // Exit Panic Combo Check (Ctrl + Alt + X)
-             else if (event.ctrlKey && event.altKey && (event.key === 'x' || event.key === 'X')) {
-                  console.log("Ctrl+Alt+X pressed"); // Debug log
-                  event.preventDefault();
-                  // Ensure elements are available before calling exitPanicMode
-                  if (bodyElement && iframeContainer) {
-                      if (bodyElement.classList.contains('panic-active')) {
-                         exitPanicMode();
-                          // Re-attach normal mode listeners after exiting panic (Important!)
-                          attachNormalModeListeners();
-                      } else {
-                         console.log("Ctrl+Alt+X pressed, but not in panic mode.");
-                      }
-                  } else {
-                       console.warn("Cannot exit panic mode: DOM elements not ready yet.");
-                  }
-             }
-         }
-
-        // --- Function to get DOM Elements ---
         function getElements() {
             searchContainer = document.getElementById('search-container');
+            greeting = document.getElementById('greeting'); // Get greeting
             searchBox = document.getElementById('search-box');
             urlInput = document.getElementById('url-input');
             submitSearchButton = document.getElementById('submit-search-button');
@@ -176,18 +377,18 @@
             closeButton = document.getElementById('close-button');
             bodyElement = document.body;
             themeSelector = document.getElementById('theme-selector');
-            console.log("DOM elements retrieved:", !!bodyElement, !!themeSelector); // Debug log
+            disclaimerElement = document.getElementById('disclaimer'); // Get disclaimer
         }
+
 
         // --- Update Function (Async) ---
         async function checkForUpdates() {
-            // Prevent update loop
+            // Update check logic remains the same...
             if (window.location.hash === UPDATE_HASH_FLAG) {
                 console.log("Update applied, skipping check.");
-                if (history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
-                return false; // Indicate no update applied
+                 if (history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
+                return true; // Indicate that an update was just applied
             }
-
             console.log("Checking for updates...");
             try {
                 const response = await fetch(UPDATE_URL, { cache: 'no-store' });
@@ -200,14 +401,15 @@
                     const blob = new Blob([newHtmlText], { type: 'text/html' });
                     const objectUrl = URL.createObjectURL(blob);
                     window.location.replace(objectUrl + UPDATE_HASH_FLAG);
-                    return true; // Indicate update applied (though script stops)
+                    // Script stops here due to navigation
+                    return false; // Technically won't be reached, but logically indicates update is happening
                 } else {
                     console.log("No update needed.");
-                    return false; // Indicate no update applied
+                    return false; // No update applied
                 }
             } catch (error) {
                 console.log("Update check failed (maybe offline?).", error);
-                return false; // Indicate no update applied
+                return false; // No update applied
             }
         }
 
@@ -217,40 +419,50 @@
             if (!themeName) themeName = 'light';
             document.documentElement.setAttribute('data-theme', themeName);
             if (themeSelector) themeSelector.value = themeName;
+
+            // Update arrow color (example - needs refinement if complex colors are needed)
+            try {
+                let arrowColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-text-color').trim() || '#586069';
+                if (themeSelector) {
+                     themeSelector.style.backgroundImage = `url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%225%22%20viewBox%3D%220%200%2010%205%22%3E%3Cpath%20fill%3D%22${encodeURIComponent(arrowColor)}%22%20d%3D%22M0%200l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E')`;
+                }
+            } catch (e) { console.warn("Could not update selector arrow color", e); }
         }
-        function saveTheme(themeName) { try { localStorage.setItem(THEME_STORAGE_KEY, themeName); } catch (e) { console.error("LocalStorage unavailable (saveTheme).", e); } }
+
+        function saveTheme(themeName) {
+             try { localStorage.setItem(THEME_STORAGE_KEY, themeName); }
+             catch (e) { console.error("LocalStorage unavailable. Theme preference won't be saved.", e); }
+        }
 
         // --- Panic Mode & Core App Functions ---
         function enterPanicMode() {
-            // Add checks for elements again just in case
-            if (!contentIframe || !bodyElement || !searchContainer || !iframeContainer) {
-                 console.error("Cannot enter panic: Missing required elements!"); return;
-            }
+            if (!contentIframe || !bodyElement || !localStorage || !searchContainer || !iframeContainer || !disclaimerElement) return;
             console.log("Entering Panic Mode");
             contentIframe.src = PANIC_URL;
-            bodyElement.classList.add('panic-active');
-            try { localStorage.setItem(PANIC_STORAGE_KEY, 'true'); } catch (e) { console.error("LocalStorage unavailable (enterPanic).", e); }
+            bodyElement.classList.add('panic-active'); // This class now also hides disclaimer via CSS
+            try { localStorage.setItem(PANIC_STORAGE_KEY, 'true'); } catch (e) { console.error("LocalStorage unavailable.", e); }
             searchContainer.style.opacity = '0'; searchContainer.style.visibility = 'hidden'; searchContainer.style.pointerEvents = 'none';
             iframeContainer.classList.add('visible');
-             // Detach normal mode listeners if necessary (optional cleanup)
-            // detachNormalModeListeners();
+            // No need to explicitly hide disclaimer, CSS handles it via .panic-active
         }
 
         function exitPanicMode() {
-             if (!bodyElement || !iframeContainer || !contentIframe || !searchContainer) {
-                 console.error("Cannot exit panic: Missing required elements!"); return;
-             }
+             if (!bodyElement || !localStorage || !iframeContainer || !contentIframe || !searchContainer || !disclaimerElement) return;
              console.log("Exiting Panic Mode");
-             try { localStorage.removeItem(PANIC_STORAGE_KEY); } catch (e) { console.error("LocalStorage unavailable (exitPanic).", e); }
+             try { localStorage.removeItem(PANIC_STORAGE_KEY); } catch (e) { console.error("LocalStorage unavailable.", e); }
              bodyElement.classList.remove('panic-active');
              iframeContainer.classList.remove('visible');
-             // Use timeout to clear src after transition starts, prevents flash
-             setTimeout(() => { if(contentIframe) contentIframe.src = 'about:blank'; }, 50);
+             contentIframe.src = 'about:blank';
              searchContainer.style.opacity = '1'; searchContainer.style.visibility = 'visible'; searchContainer.style.pointerEvents = 'auto';
+             // Disclaimer will become visible again by default unless hidden for other reasons (like initial load)
+             // Let's explicitly show it on exit if it wasn't hidden due to update hash
+             if (window.location.hash !== UPDATE_HASH_FLAG && disclaimerElement) {
+                 disclaimerElement.classList.remove('hidden');
+             }
         }
 
         function showRegularIframe(url) {
-            if (!bodyElement || bodyElement.classList.contains('panic-active') || !contentIframe || !iframeContainer || !searchContainer) return;
+            if (!bodyElement || bodyElement.classList.contains('panic-active') || !contentIframe || !iframeContainer || !searchContainer || !disclaimerElement) return;
             let finalUrl = url.trim();
             if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) finalUrl = 'https://' + finalUrl;
             console.log("Loading regular URL:", finalUrl);
@@ -258,23 +470,31 @@
                 contentIframe.src = finalUrl;
                 iframeContainer.classList.add('visible');
                 searchContainer.style.opacity = '0'; searchContainer.style.visibility = 'hidden'; searchContainer.style.pointerEvents = 'none';
+                disclaimerElement.classList.add('hidden'); // Hide disclaimer when showing iframe
             } catch (e) {
                 console.error("Error setting iframe src:", e); alert("Could not load the URL.");
                 iframeContainer.classList.remove('visible'); searchContainer.style.opacity = '1'; searchContainer.style.visibility = 'visible'; searchContainer.style.pointerEvents = 'auto';
+                // Should we show disclaimer again on error? Maybe not, user tried to navigate away.
             }
         }
 
         function closeRegularIframe() {
-             if (!bodyElement || bodyElement.classList.contains('panic-active') || !iframeContainer || !contentIframe || !searchContainer) return;
+             if (!bodyElement || bodyElement.classList.contains('panic-active') || !iframeContainer || !contentIframe || !searchContainer || !disclaimerElement) return;
              iframeContainer.classList.remove('visible');
-             setTimeout(() => { if(contentIframe) contentIframe.src = 'about:blank'; }, 50);
+             contentIframe.src = 'about:blank';
              searchContainer.style.opacity = '1'; searchContainer.style.visibility = 'visible'; searchContainer.style.pointerEvents = 'auto';
+             // Show disclaimer again when closing iframe if not hidden for other reasons
+             if (window.location.hash !== UPDATE_HASH_FLAG && !bodyElement.classList.contains('panic-active')) {
+                disclaimerElement.classList.remove('hidden');
+             }
         }
 
         function performSearch() {
-            if (!urlInput || !searchBox) return;
+            if (!urlInput || !searchBox || !disclaimerElement) return;
             const url = urlInput.value.trim();
-            if (url) { showRegularIframe(url); }
+            if (url) {
+                showRegularIframe(url); // This function now also hides the disclaimer
+            }
             else {
                 console.log("User entered no URL.");
                 if (!document.getElementById('shake-animation-style')) addShakeAnimation();
@@ -290,103 +510,86 @@
              document.head.appendChild(styleSheet);
         }
 
-        // Function to attach listeners specific to normal operation mode
-        function attachNormalModeListeners() {
-            if (submitSearchButton) {
-                // Remove previous listener to prevent duplicates if called multiple times
-                submitSearchButton.removeEventListener('click', performSearch);
-                submitSearchButton.addEventListener('click', performSearch);
-            }
-            if (urlInput) {
-                urlInput.removeEventListener('keypress', handleSearchInputKeypress); // Use named function
-                urlInput.addEventListener('keypress', handleSearchInputKeypress);
-            }
-             if (closeButton) {
-                 closeButton.removeEventListener('click', closeRegularIframe);
-                 closeButton.addEventListener('click', closeRegularIframe);
-             }
-             if (themeSelector) {
-                themeSelector.removeEventListener('change', handleThemeChange); // Use named function
-                themeSelector.addEventListener('change', handleThemeChange);
-             }
-             console.log("Normal mode listeners attached.");
-        }
-
-        // Named handler for search input keypress
-        function handleSearchInputKeypress(event) {
-             if (event.key === 'Enter' || event.keyCode === 13) {
-                 event.preventDefault();
-                 performSearch();
-             }
-        }
-        // Named handler for theme change
-        function handleThemeChange(event) {
-             const newTheme = event.target.value;
-             applyTheme(newTheme);
-             saveTheme(newTheme);
-         }
-
-        // --- Application Initialization ---
-        function initializeApp() {
-            console.log("Initializing App...");
-            getElements(); // Get elements references first
+        function initializeApp(wasJustUpdated) { // Pass flag from update check
+            getElements(); // Get elements first
 
             // Apply saved theme
             let savedTheme = 'light';
-            try { savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light'; } catch (e) { console.error("LocalStorage unavailable (readTheme).", e); }
+            try { savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light'; }
+            catch (e) { console.error("LocalStorage unavailable for reading theme.", e); }
             applyTheme(savedTheme);
 
-            // Check initial panic state
             let isPanic = false;
-            try { isPanic = localStorage.getItem(PANIC_STORAGE_KEY) === 'true'; } catch (e) { console.error("LocalStorage unavailable (readPanic).", e); }
+             // Check initial panic state
+             try {
+                 if (localStorage.getItem(PANIC_STORAGE_KEY) === 'true') {
+                     isPanic = true;
+                     if (bodyElement && contentIframe) enterPanicMode();
+                     else document.addEventListener('DOMContentLoaded', enterPanicMode);
+                 }
+             } catch (e) { console.error("LocalStorage unavailable for initial panic check.", e); }
 
-            if (isPanic) {
-                // Enter panic mode requires DOM elements, ensure they exist
-                if (bodyElement && contentIframe && searchContainer && iframeContainer) {
-                    enterPanicMode();
-                } else {
-                    console.warn("Deferring initial panic mode entry (DOM not ready in initializeApp).");
-                    // If DOM isn't ready here, something is odd, but let's try deferring
-                    document.addEventListener('DOMContentLoaded', enterPanicMode);
-                }
-            } else {
-                // If not starting in panic mode, attach normal listeners
-                attachNormalModeListeners();
-            }
+             // --- Disclaimer Visibility Logic ---
+             if (disclaimerElement) {
+                 if (wasJustUpdated || isPanic) {
+                    // Hide immediately if just updated or starting in panic mode
+                    disclaimerElement.classList.add('hidden');
+                 } else {
+                     // Ensure it's visible on initial normal load
+                     disclaimerElement.classList.remove('hidden');
+                 }
+             }
 
-            // Add shake animation CSS (safe to call multiple times)
+
+            // Setup listeners only if not in panic mode initially
+            if (!isPanic) {
+                 if (submitSearchButton) submitSearchButton.addEventListener('click', performSearch);
+                 if (urlInput) urlInput.addEventListener('keypress', (event) => { if (event.key === 'Enter') { event.preventDefault(); performSearch(); } });
+                 if (closeButton) closeButton.addEventListener('click', closeRegularIframe);
+             }
+            // Theme selector listener
+            if (themeSelector) {
+                 themeSelector.addEventListener('change', (event) => {
+                     const newTheme = event.target.value;
+                     applyTheme(newTheme);
+                     saveTheme(newTheme);
+                 });
+             }
+
+            // Global key listener
+            window.addEventListener('keydown', handleGlobalKeys);
+
+            // Add shake animation CSS
             addShakeAnimation();
-            console.log("App Initialized.");
         }
 
+         function handleGlobalKeys(event) {
+             if (event.key === '`') { event.preventDefault(); enterPanicMode(); }
+             else if (event.ctrlKey && event.altKey && (event.key === 'x' || event.key === 'X')) {
+                  event.preventDefault();
+                  if (bodyElement && bodyElement.classList.contains('panic-active')) {
+                     exitPanicMode();
+                      // Re-attach normal mode listeners
+                      if (submitSearchButton) submitSearchButton.addEventListener('click', performSearch);
+                      if (urlInput) urlInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+                      if (closeButton) closeButton.addEventListener('click', closeRegularIframe);
+                  } else { console.log("Ctrl+Alt+X pressed, but not in panic mode."); }
+             }
+         }
+
         // --- Execution Start ---
-
-        // 1. Attach the global key listener IMMEDIATELY
-        // This increases the chance it's ready even if other init is slow
-        window.addEventListener('keydown', handleGlobalKeys);
-        console.log("Global key listener attached EARLY.");
-
-        // 2. Attempt update check
-        checkForUpdates().then((updateApplied) => {
-            // If an update was applied, the script would have stopped.
-            // If we reach here, no update was applied or check failed.
-            if (!updateApplied) {
-                // 3. Initialize the rest of the app logic
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initializeApp);
-                } else {
-                    initializeApp(); // DOM is already ready
-                }
-            }
+        checkForUpdates().then((wasJustUpdated) => { // Get boolean result from update check
+             if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => initializeApp(wasJustUpdated)); // Pass flag
+             } else {
+                initializeApp(wasJustUpdated); // Pass flag
+             }
          }).catch(error => {
-             // Catch unexpected errors from the update check promise itself
              console.error("Error during update check process:", error);
-             // Still try to initialize the app in case of failure
+             // Still try to initialize, assume not just updated
               if (document.readyState === 'loading') {
-                 document.addEventListener('DOMContentLoaded', initializeApp);
-              } else {
-                 initializeApp();
-              }
+                 document.addEventListener('DOMContentLoaded', () => initializeApp(false));
+              } else { initializeApp(false); }
          });
 
     </script>
